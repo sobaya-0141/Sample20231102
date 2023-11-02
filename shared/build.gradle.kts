@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    
+    alias(libs.plugins.skiePlugin)
 }
 
 kotlin {
@@ -23,13 +23,17 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                //put your multiplatform dependencies here
+                implementation(libs.skie)
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
         val commonTest by getting {
             dependencies {
             }
         }
+        val iosMain by getting {
+            dependencies {
+            }
+        }
     }
 }
-

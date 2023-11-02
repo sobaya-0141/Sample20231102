@@ -1,9 +1,15 @@
 import SwiftUI
+import Shared
 
 struct ContentView: View {
+    let skieTest = SkieTest()
     var body: some View {
         VStack {
-            Text("Test")
+            Button(action: {
+                skieTest.test()
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
         }
         .padding()
     }
