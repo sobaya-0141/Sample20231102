@@ -11,7 +11,7 @@ import Shared
 
 final class SkieTest {
     func test() {
-        Task.detached {
+        let task = Task.detached {
             let suspendTest = try? await TestKt.suspendTest()
             print(suspendTest)
             
@@ -20,5 +20,7 @@ final class SkieTest {
                 print(it)
             }
         }
+        sleep(10)
+        task.cancel()
     }
 }

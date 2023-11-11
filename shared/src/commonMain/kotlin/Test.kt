@@ -6,8 +6,10 @@ import kotlinx.coroutines.flow.flow
 fun test(): String = "TEST"
 
 fun flowTest(): Flow<Int> = flow {
-    (0..50).forEach {
+    (0..5000).forEach {
+        println("KOTLIN$it")
         emit(it)
+        delay(500)
     }
 }
 
